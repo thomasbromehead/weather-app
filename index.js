@@ -1,5 +1,4 @@
 $(document).ready(function(){
-   $('#weather').hide();
    if(navigator.geolocation){
       var currentPosition = '';
       navigator.geolocation.getCurrentPosition(function(position){
@@ -18,15 +17,17 @@ $(document).ready(function(){
 
             var country = json.location.country;
             var city = json.location.name;
+            var region = json.location.region;
             
             var temp = json.current.temp_c;
             var tempf = json.current.temp_f;
-            var last-update = json.current.last_update.replace('-', ' ');
+           // var last-update = json.current.last_updated.replace('-', ' ');
 
             var wind = json.current.wind_kph;
             var humidity = json.current.humidity;
             var time = json.location.localtime.split(' ')[1];
             var cloud = json.current.cloud;
+            $('#weather').html(city + ', ' + region +', ' + country);
          })
       });
    }
