@@ -48,9 +48,10 @@ $(document).ready(function(){
             var yes = true;
             $('#switch').on('click', function(){
                if (yes) {
-                  $('#info3').html(temp_f + '&#8457');
+                  $('#info3').html(tempf + '&#8457');
                   $('#switch').html("Show in Celsius");
                   var yes = false;
+                  // DO NOT REDECLARE THE VARIABLE.
                } else {
                   $('#info3').html(temp + '&#8451');
                   $('#switch').html("Show in Fahrenheit");
