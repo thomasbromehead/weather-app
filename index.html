@@ -14,7 +14,7 @@
    <div class="container-fluid">
       <div class="row">
          <div class="col-sm-12 text-center jumbotron top">
-            <h1>La météo aujourd'hui</h1>
+            <h1>Today's weather</h1>
             <hr class="short">
             <h2 id="weather">Loading...</h2>
          </div>
@@ -22,17 +22,22 @@
 
       
       <div class="row text-center grey-jumbo">
+          <div class="col-sm-12 text-center">
+              <h3 id="temp"></h3>
+          </div>
            <div class="col-sm-4">
                <h3 id="info1"></h3>
+               <hr class="short">
                <h3 id="info2"></h3>
-           </div>
-           <div class="col-sm-4">
-               <h3 id="info2"></h3>
-               <button class="btn btn-primary">Show in Fahrenheit</button>
            </div>
            <div class="col-sm-4">
                <h3 id="info3"></h3>
-               <h3 id="info4"></h3>
+               <button class="btn btn-primary" id="switch">Show in Fahrenheit</button>
+           </div>
+           <div class="col-sm-4">
+               <h3 id="info5"></h3>
+               <hr class="short">
+               <h3 id="info6"></h3>
            </div>
       </div>
    </div>

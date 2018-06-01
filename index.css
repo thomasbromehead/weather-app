@@ -37,3 +37,8 @@ hr.below {
 #info3 {
    font-size: 60px;
 }
+
+h3{
+   padding: 10px;
+   background-color: rgba(55,55,55,0.2);
+}

@@ -1,4 +1,5 @@
 $(document).ready(function(){
+   $('.short').hide();
    if(navigator.geolocation){
       var currentPosition = '';
       navigator.geolocation.getCurrentPosition(function(position){
@@ -27,7 +28,44 @@ $(document).ready(function(){
             var humidity = json.current.humidity;
             var time = json.location.localtime.split(' ')[1];
             var cloud = json.current.cloud;
+            console.log(data);
             $('#weather').html(city + ', ' + region +', ' + country);
+               if (temp < 18) {
+                  $('.grey-jumbo').css({
+                     backgroundImage : 'url(https://placeimg.com/640/480/nature)'
+                  });
+                  $('#temp').html("<h1>It's a pretty cold day today ... <hr></h1>");
+               } else if (temp > 18) {
+                  $('.grey-jumbo').css({
+                     backgroundImage : 'url(https://placeimg.com/640/480/nature)'
+                  });
+                  $('#temp').html("<h1>It's a sunny day... <hr></h1>");
+               };
+
+            $('#info1').html(time);
+            $('#info2').html('Wind: ' + wind + 'kph');
+            $('#info3').html(temp + '&#8451');
+            var yes = true;
+            $('#switch').on('click', function(){
+               if (yes) {
+                  $('#info3').html(temp_f + '&#8457');
+                  $('#switch').html("Show in Celsius");
+                  var yes = false;
+               } else {
+                  $('#info3').html(temp + '&#8451');
+                  $('#switch').html("Show in Fahrenheit");
+                  yes = true;
+               }
+            });
+
+            $('.short').show();
+            //show sky status
+            if ( cloud <= 30) {
+               $('#info5').html('Clear sky');
+            } else {
+               $('#info5').html('Cloudy');
+            }
+            $('#info6').html('Humidity: ' + humidity + '%');
          })
       });
    }
