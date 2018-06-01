@@ -50,7 +50,7 @@ $(document).ready(function(){
                if (yes) {
                   $('#info3').html(tempf + '&#8457');
                   $('#switch').html("Show in Celsius");
-                  var yes = false;
+                  yes = false;
                   // DO NOT REDECLARE THE VARIABLE.
                } else {
                   $('#info3').html(temp + '&#8451');
